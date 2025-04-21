@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
+
+import { Button } from "@/components/ui/button";
+
+import Navigation from "@/components/ui/custom/Navigation";
+import Bottom from "@/components/ui/custom/Bottom";
+
 import { IoMdArrowBack } from "react-icons/io";
 import { FaThreads } from "react-icons/fa6";
-import { MdOutlinePushPin } from "react-icons/md";
-import { RiInstagramLine, RiMenu4Line } from "react-icons/ri";
-import { Button } from "@/components/ui/button";
-import Bottom from "@/components/ui/custom/Bottom";
-import Link from "next/link";
-import Navigation from "@/components/ui/custom/Navigation";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Threads",
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`antialiased w-full min-h-screen`}>
         <div className="flex flex-col md:flex-row w-full items-end">
           <div className="flex justify-between items-center p-5 md:hidden w-full">
@@ -43,20 +45,22 @@ export default function RootLayout({
           </div>
 
           <aside className="hidden md:flex flex-col justify-between h-screen w-fit px-4 py-6">
-            <Link href="/">
+            <Link href="/" className="w-[60px] h-[60px]">
               <FaThreads color="white" size={37} />
             </Link>
-            <nav>
-              <Navigation />
-            </nav>
-            <div className="flex flex-col gap-5">
-              <MdOutlinePushPin size={26} className="text-[#6B6B6B]" />
-              <RiMenu4Line size={26} className="text-[#6B6B6B]" />
-            </div>
+
+            <Navigation />
           </aside>
 
-          <main className="max-w-[638px] w-full mx-auto bg-[#181818] h-[90vh] rounded-2xl overflow-y-auto hide-scrollbar p-5">
-            {children}
+          <main className="max-w-[638px] w-full mx-auto bg-[#0a0a0a]  border border-[#2d2d2d] h-[90vh] rounded-2xl overflow-y-auto hide-scrollbar p-5">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
           </main>
         </div>
 
