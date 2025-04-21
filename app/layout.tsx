@@ -45,7 +45,7 @@ export default function RootLayout({
           </div>
 
           <aside className="hidden md:flex flex-col justify-between h-screen w-fit px-4 py-6">
-            <Link href="/" className="w-[60px] h-[60px]">
+            <Link href="/" className="w-[60px] h-[50px]">
               <FaThreads color="white" size={37} />
             </Link>
 
