@@ -36,8 +36,7 @@ export default function RootLayout({
 
             <div className="flex-1 flex justify-end">
               <Button
-                variant="outline"
-                className="w-[78px] h-[34px] text-black font-bold rounded-[10px]"
+                className="w-[78px] h-[34px] text-black bg-white font-bold rounded-[10px]"
               >
                 Войти
               </Button>
