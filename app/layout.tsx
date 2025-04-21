@@ -35,17 +35,17 @@ export default function RootLayout({
             </div>
 
             <div className="flex-1 flex justify-end">
-              <Button
-                className="w-[78px] h-[34px] text-black bg-white font-bold rounded-[10px]"
-              >
+              <Button className="w-[78px] h-[34px] text-black bg-white font-bold rounded-[10px]">
                 Войти
               </Button>
             </div>
           </div>
 
           <aside className="hidden md:flex flex-col justify-between h-screen w-fit px-4 py-6">
-            <Link href="/" className="w-[60px] h-[50px]">
-              <FaThreads color="white" size={37} />
+            <Link href="/" className="">
+              <div className="flex justify-center ">
+                <FaThreads color="white" size={37} />
+              </div>
             </Link>
 
             <Navigation />
