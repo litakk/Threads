@@ -35,7 +35,7 @@ export default function Navigation() {
   return (
     <>
       <ul className="flex flex-col items-center gap-3.5 text-[#6B6B6B]">
-        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90">
+        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer">
           <button
             onClick={() => router.push("/")}
             className={pathname === "/" ? "text-white" : ""}
@@ -43,7 +43,7 @@ export default function Navigation() {
             <GrHomeRounded size={26} />
           </button>
         </li>
-        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90">
+        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer">
           <button
             onClick={() => router.push("/search")}
             className={pathname === "/search" ? "text-white" : ""}
@@ -51,17 +51,17 @@ export default function Navigation() {
             <IoSearchOutline size={26} />
           </button>
         </li>
-        <li className="bg-[#171717] w-[60px] h-[50px] rounded-[12px] flex items-center justify-center hover:text-white duration-300 active:scale-90">
+        <li className="bg-[#171717] w-[60px] h-[50px] rounded-[12px] flex items-center justify-center hover:text-white duration-300 active:scale-90 cursor-pointer">
           <button onClick={handleProtectedClick}>
             <IoMdAdd size={26} />
           </button>
         </li>
-        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90">
+        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer">
           <button onClick={handleProtectedClick}>
             <GoHeart size={26} />
           </button>
         </li>
-        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90">
+        <li className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer">
           <button onClick={handleProtectedClick}>
             <CgProfile size={26} />
           </button>
@@ -71,7 +71,7 @@ export default function Navigation() {
       <div className="flex flex-col gap-1">
         <button
           onClick={handleProtectedClick}
-          className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90"
+          className="hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer"
         >
           <MdOutlinePushPin size={26} className="text-[#6B6B6B]" />
         </button>
@@ -79,7 +79,7 @@ export default function Navigation() {
           <DropdownMenuTrigger asChild>
             <div
               tabIndex={0}
-              className="group hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90"
+              className="group hover:bg-[#171717] duration-300 w-[60px] h-[50px] rounded-[12px] flex items-center justify-center active:scale-90 cursor-pointer"
             >
               <RiMenu4Line
                 size={26}
