@@ -23,6 +23,7 @@ export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [support, setSupport] = useState(false);
 
   const handleProtectedClick = () => {
     setIsModalOpen(true);
@@ -30,6 +31,14 @@ export default function Navigation() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const supportHandleClick = () => {
+    setSupport(true);
+  };
+
+  const closeSupportHandleClick = () => {
+    setSupport(false);
   };
 
   return (
@@ -90,7 +99,9 @@ export default function Navigation() {
           <DropdownMenuContent>
             <DropdownMenuLabel>Внешний Вид</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Сообщить о проблеме</DropdownMenuItem>
+            <DropdownMenuItem onClick={supportHandleClick}>
+              Сообщить о проблеме
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -118,6 +129,35 @@ export default function Navigation() {
           </div>
         </div>
       )}
+{support && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div
+      className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      onClick={closeSupportHandleClick}
+    ></div>
+
+    <div className="relative z-50 w-full max-w-md bg-[#101010] rounded-2xl shadow-2xl border border-white/10 p-6 space-y-4">
+      <h2 className="text-white text-lg font-semibold">
+        Сообщить о проблеме
+      </h2>
+
+      <textarea
+        placeholder="Предоставьте как можно более подробную информацию..."
+        className="w-full h-40 bg-[#1a1a1a] text-white text-sm rounded-xl p-4 resize-none border border-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
+      />
+
+      <div className="flex justify-end">
+        <button
+          onClick={closeSupportHandleClick}
+          className="bg-white text-black font-medium py-2 px-4 rounded-lg hover:bg-neutral-200 transition"
+        >
+          Отправить
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </>
   );
 }
