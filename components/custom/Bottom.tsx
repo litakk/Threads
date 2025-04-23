@@ -26,7 +26,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Button } from "../button";
+import { Button } from "../ui/button";
 
 const Bottom: React.FC = () => {
   const pathname = usePathname();
@@ -42,13 +42,15 @@ const Bottom: React.FC = () => {
             return (
               <Drawer key={id}>
                 <DrawerTrigger asChild>
-                  <button className={`${active ? "text-white" : "text-gray-600"}`}>
+                  <button
+                    className={`${active ? "text-white" : "text-gray-600"}`}
+                  >
                     {icon}
                   </button>
                 </DrawerTrigger>
                 <DrawerContent className="h-[451px] bg-neutral-900">
                   <DrawerHeader>
-                    <DrawerClose  className="w-4 h-4 text-gray-500 text-4xl">
+                    <DrawerClose className="w-4 h-4 text-gray-500 text-4xl">
                       <Button className="w-4 h-4 text-gray-500 text-4xl">
                         &times;
                       </Button>

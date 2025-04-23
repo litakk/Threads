@@ -18,6 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from "next/link";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -122,10 +123,12 @@ export default function Navigation() {
               курсе событий, <br /> подписываться на знакомых и делать <br />{" "}
               многое другое.
             </p>
+            <Link href={"/api/auth/signin"}>
             <button className="w-full py-6 px-5 cursor-pointer bg-[#101010] text-center leading-5 gap-2 rounded-2xl flex items-center justify-center text-[white] text-[16px] font-semibold mt-10">
               <RiInstagramLine className="text-[24px]" />
               Продолжить с аккаунтом Instagram
             </button>
+            </Link>
           </div>
         </div>
       )}

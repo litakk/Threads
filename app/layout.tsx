@@ -4,23 +4,28 @@ import "./globals.css";
 
 import { Button } from "@/components/ui/button";
 
-import Navigation from "@/components/ui/custom/Navigation";
-import Bottom from "@/components/ui/custom/Bottom";
+import Navigation from "@/components/custom/Navigation";
+import Bottom from "@/components/custom/Bottom";
 
 import { IoMdArrowBack } from "react-icons/io";
 import { FaThreads } from "react-icons/fa6";
 import { ThemeProvider } from "@/components/theme-provider";
+import SessionProvider from "@/components/custom/SessionProvider";
+import { getServerSession } from "next-auth";
+import NavMenu from "@/components/custom/NavMenu";
 
 export const metadata: Metadata = {
   title: "Threads",
   description: "",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`antialiased w-full min-h-screen`}>
@@ -50,17 +55,19 @@ export default function RootLayout({
 
             <Navigation />
           </aside>
-
-          <main className="max-w-[638px] w-full mx-auto bg-[#0a0a0a]  border border-[#2d2d2d] h-[90vh] rounded-2xl overflow-y-auto hide-scrollbar p-5">
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {children}
-            </ThemeProvider>
-          </main>
+          <SessionProvider session={session}>
+            <main className="max-w-[638px] w-full mx-auto bg-[#0a0a0a]  border border-[#2d2d2d] h-[90vh] rounded-2xl overflow-y-auto hide-scrollbar p-5">
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+              >
+                <NavMenu/>
+                {children}
+              </ThemeProvider>
+            </main>
+          </SessionProvider>
         </div>
 
         <Bottom />

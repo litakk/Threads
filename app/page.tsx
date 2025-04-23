@@ -1,11 +1,18 @@
-import Posts from "../components/ui/custom/Posts"
+import { getServerSession } from "next-auth";
+import Posts from "../components/custom/Posts";
 
-export default function Home() {
+export default async function Home() {
+
+const session = await getServerSession()
+
+
   return (
-<div className="text-white p-3.5">
+    // <div className="text-white p-3.5">
+    //   <Posts />
+    // </div>
 
-<Posts/>
+    <div className="center">
 
-</div>
+    </div>
   );
 }
