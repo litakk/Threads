@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
 
 const Auth = () => {
   const { data: session } = useSession();
 
-  if (session) { 
+  if (session) {
     return (
       <>
         <p>{session.user?.name}</p>
@@ -22,13 +22,10 @@ const Auth = () => {
   );
 };
 
-
 export default function NavMenu() {
-  
-  return(
+  return (
     <div>
-      <Auth/>
+      <Auth />
     </div>
-  )
-
+  );
 }

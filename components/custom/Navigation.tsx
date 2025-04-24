@@ -124,43 +124,43 @@ export default function Navigation() {
               многое другое.
             </p>
             <Link href={"/api/auth/signin"}>
-            <button className="w-full py-6 px-5 cursor-pointer bg-[#101010] text-center leading-5 gap-2 rounded-2xl flex items-center justify-center text-[white] text-[16px] font-semibold mt-10">
-              <RiInstagramLine className="text-[24px]" />
-              Продолжить с аккаунтом Instagram
-            </button>
+              <button className="w-full py-6 px-5 cursor-pointer bg-[#101010] text-center leading-5 gap-2 rounded-2xl flex items-center justify-center text-[white] text-[16px] font-semibold mt-10">
+                <RiInstagramLine className="text-[24px]" />
+                Продолжить с аккаунтом Instagram
+              </button>
             </Link>
           </div>
         </div>
       )}
-{support && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center">
-    <div
-      className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-      onClick={closeSupportHandleClick}
-    ></div>
 
-    <div className="relative z-50 w-full max-w-md bg-[#101010] rounded-2xl shadow-2xl border border-white/10 p-6 space-y-4">
-      <h2 className="text-white text-lg font-semibold">
-        Сообщить о проблеме
-      </h2>
+      {support && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={closeSupportHandleClick}
+          ></div>
 
-      <textarea
-        placeholder="Предоставьте как можно более подробную информацию..."
-        className="w-full h-40 bg-[#1a1a1a] text-white text-sm rounded-xl p-4 resize-none border border-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
-      />
+          <div className="relative z-50 w-full max-w-md bg-[#101010] rounded-2xl shadow-2xl border border-white/10 p-6 space-y-4">
+            <h2 className="text-white text-lg font-semibold">
+              Сообщить о проблеме
+            </h2>
 
-      <div className="flex justify-end">
-        <button
-          onClick={closeSupportHandleClick}
-          className="bg-white text-black font-medium py-2 px-4 rounded-lg hover:bg-neutral-200 transition"
-        >
-          Отправить
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+            <textarea
+              placeholder="Предоставьте как можно более подробную информацию..."
+              className="w-full h-40 bg-[#1a1a1a] text-white text-sm rounded-xl p-4 resize-none border border-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
+            />
 
+            <div className="flex justify-end">
+              <button
+                onClick={closeSupportHandleClick}
+                className="bg-white text-black font-medium py-2 px-4 rounded-lg hover:bg-neutral-200 transition"
+              >
+                Отправить
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
