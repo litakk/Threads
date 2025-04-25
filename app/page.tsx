@@ -7,12 +7,7 @@ const session = await getServerSession()
 
 
   return (
-    // <div className="text-white p-3.5">
-    //   <Posts />
-    // </div>
-
-    <div className="center">
-
-    </div>
-  );
+     <div className="text-white p-3.5">
+       <Posts />
+    </div>);
 }
