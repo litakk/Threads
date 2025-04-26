@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import NavMenu from "./NavMenu";
 
 interface BurgerMenuProps {}
 
@@ -17,7 +18,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <RxHamburgerMenu />
+            <RxHamburgerMenu size={20} />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -26,6 +27,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = () => {
             <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Team</DropdownMenuItem>
             <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <DropdownMenuItem>
+              <NavMenu />
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

@@ -15,9 +15,8 @@ import { getServerSession } from "next-auth";
 import NavMenu from "@/components/custom/NavMenu";
 import BurgerMenu from "@/components/custom/MobileBurgerAfter";
 
-
 export const metadata: Metadata = {
-  title: "Threads",
+  title: "Главная - Threads",
   description: "",
 };
 
@@ -52,7 +51,7 @@ export default async function RootLayout({
                 </div>
               ) : (
                 <div className="flex-1 flex justify-end">
-                  <BurgerMenu/>
+                  <BurgerMenu />
                 </div>
               )}
             </div>
@@ -73,7 +72,6 @@ export default async function RootLayout({
                 enableSystem
                 disableTransitionOnChange
               >
-                <NavMenu />
                 {children}
               </ThemeProvider>
             </main>

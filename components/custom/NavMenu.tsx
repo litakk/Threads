@@ -8,8 +8,7 @@ const Auth = () => {
   if (session) {
     return (
       <>
-        <p>{session.user?.name}</p>
-        <button onClick={() => signOut()}>sign out</button>
+        <button onClick={() => signOut()}>Выход</button>
       </>
     );
   }

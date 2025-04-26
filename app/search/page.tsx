@@ -1,7 +1,12 @@
 import { Input } from "@/components/ui/input";
+import { Metadata } from "next";
 import { MdSearch } from "react-icons/md";
 
 interface PageProps {}
+
+export const metadata: Metadata = {
+  title: "Поиск — Threads",
+};
 
 const Page: React.FC<PageProps> = () => {
   return (
